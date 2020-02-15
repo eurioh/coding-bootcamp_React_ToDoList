@@ -8,8 +8,9 @@ function TodoItem(props){
     }
 
   return (
-    <div onClick={handleClick}>
-        <li style={{textDecoration: isDone && "line-through"}}>{props.text}</li>
+    <div onClick={()=>{props.onChecked(props.Id);}}>
+
+        <li>{props.text}</li>
     </div>);
 }
 

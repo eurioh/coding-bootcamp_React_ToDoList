@@ -11,22 +11,19 @@ function App() {
 
   function addItem(inputText){
     setItems(prevItems => {
-      return [...prevItems, inputText]
+      return [...prevItems, inputText];
     });
-      
-    setInputText("");
   }
+    
     //changes in parent component
-    function deleteItem(id){
-       console.log(id);
-        
-      setItems((prevItems) => {
+    function deleteItem(id) {
+      setItems(prevItems => {
         return prevItems.filter((item, index)=>{
           return index !== id ; 
-        })        
-      })
+        });        
+      });
     }
-  }
+
 
   return (
     <div className="container">
@@ -52,6 +49,6 @@ function App() {
       </div>
     </div>
   );
-}
 
+}
 export default App;

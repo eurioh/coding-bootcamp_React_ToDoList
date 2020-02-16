@@ -6,12 +6,16 @@ function InputArea(props){
     function handleChange(event){
         const newValue = event.target.value;
         setInputText(newValue);
-      }
+    }
 
     return (
         <div className="form">
             <input onChange={handleChange} type="text" value={inputText}/>
-            <button onClick={props.onAdd}>
+            <button onClick={ ()=>{
+                props.onAdd(inputText);
+                setInputText("");
+            }}
+                >
               <span>Add</span>
             </button>
         </div>
